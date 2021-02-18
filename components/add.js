@@ -1,13 +1,11 @@
 import React, {useState} from 'react';
 import { TextInput, View, StyleSheet, Button } from 'react-native';
-
-export default function Add (navigation) {
+export default function Add ({navigation}) {
     const [itemName, setItemName] = useState('');
     const [itemDesc, setItemDesc] = useState('');
     const [itemPlace, setItemPlace] = useState('');
-
     return(
-        <view style={styles.container}>
+        <View style={styles.container}>
             <TextInput
             style={styles.textField}
             placeholder="Enter item name"
@@ -34,13 +32,10 @@ export default function Add (navigation) {
                 navigation.goBack();
             }}
             />
-            
-        </view>
+        </View>
     )
 }
-
 const styles = StyleSheet.create({
     container:{padding:10},
     textField: { height: 40, borderColor: 'gray', borderWidth: 1, marginBottom: 10, padding: 10}
-
 });
